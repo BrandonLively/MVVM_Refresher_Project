@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import com.wkdrabbit.mvvmrefresher.R
 import com.wkdrabbit.mvvmrefresher.data.Quote
 import com.wkdrabbit.mvvmrefresher.utilities.InjectorUtils
@@ -20,7 +19,7 @@ class QuotesActivity : AppCompatActivity() {
 
     private fun initalizeUi(){
         val factory = InjectorUtils.provideQuotesViewModelFactory()
-        val viewModel = ViewModelProviders.of(this, factory).get(QuotesViewModel::class.java)
+        val viewModel = ViewModelProvider(this, factory).get(QuotesViewModel::class.java)
 
         viewModel.getQuotes().observe(this, Observer{quotes -> val stringBuilder = StringBuilder()
         quotes.forEach{
