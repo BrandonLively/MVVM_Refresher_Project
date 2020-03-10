@@ -1,7 +1,8 @@
-package com.wkdrabbit.mvvmrefresher
+package com.wkdrabbit.mvvmrefresher.ui.quotes
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.wkdrabbit.mvvmrefresher.R
 
 class QuotesActivity : AppCompatActivity() {
 
